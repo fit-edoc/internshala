@@ -14,9 +14,9 @@ export default function FilterSection({
   showClear = false,
 }: FilterSectionProps) {
   return (
-    <div className="border-b border-gray-100 py-4 last:border-b-0">
+    <div className="border-b border-border py-4 last:border-b-0">
       <div className="flex items-center justify-between mb-2">
-        <label className="text-xs font-semibold uppercase tracking-wider text-gray-500">
+        <label className="text-[10px] font-bold uppercase tracking-wider text-zinc-500 dark:text-zinc-400">
           {label}
         </label>
         {showClear && onClear && (

@@ -51,36 +51,36 @@ export default function InternshipList({
       <div className="flex flex-col gap-5 w-full">
         {/* Header Skeleton */}
         <div className="flex justify-between items-center py-2 animate-pulse">
-          <div className="h-6 w-40 bg-gray-200 rounded-md"></div>
-          <div className="h-8 w-32 bg-gray-200 rounded-md"></div>
+          <div className="h-6 w-40 bg-gray-200 dark:bg-slate-800 rounded-md"></div>
+          <div className="h-8 w-32 bg-gray-200 dark:bg-slate-800 rounded-md"></div>
         </div>
 
         {/* List of Skeleton Cards */}
         {[1, 2, 3].map((n) => (
           <div
             key={n}
-            className="bg-white border border-gray-100 rounded-2xl p-5 md:p-6 shadow-xs animate-pulse flex flex-col gap-4"
+            className="bg-card border border-border rounded-lg p-5 md:p-6 shadow-xs animate-pulse flex flex-col gap-4"
           >
             <div className="flex gap-4 items-start">
-              <div className="w-12 h-12 rounded-xl bg-gray-200"></div>
+              <div className="w-12 h-12 rounded-md bg-zinc-200 dark:bg-zinc-800"></div>
               <div className="flex flex-col gap-2 w-1/2">
-                <div className="h-4 bg-gray-200 rounded-md w-3/4"></div>
-                <div className="h-3 bg-gray-200 rounded-md w-1/2"></div>
+                <div className="h-4 bg-zinc-200 dark:bg-zinc-800 rounded-md w-3/4"></div>
+                <div className="h-3 bg-zinc-200 dark:bg-zinc-800 rounded-md w-1/2"></div>
               </div>
             </div>
-            <div className="grid grid-cols-4 gap-4 py-2 border-y border-gray-50 my-1">
+            <div className="grid grid-cols-4 gap-4 py-2 border-y border-border my-1">
               {[1, 2, 3, 4].map((i) => (
                 <div key={i} className="flex flex-col gap-1.5">
-                  <div className="h-2 bg-gray-100 rounded-md w-1/2"></div>
-                  <div className="h-3 bg-gray-200 rounded-md w-3/4"></div>
+                  <div className="h-2 bg-zinc-100 dark:bg-zinc-900/50 rounded-md w-1/2"></div>
+                  <div className="h-3 bg-zinc-200 dark:bg-zinc-800 rounded-md w-3/4"></div>
                 </div>
               ))}
             </div>
             <div className="flex justify-between items-center mt-1">
-              <div className="h-3 bg-gray-200 rounded-md w-24"></div>
+              <div className="h-3 bg-zinc-200 dark:bg-zinc-800 rounded-md w-24"></div>
               <div className="flex gap-3">
-                <div className="h-6 bg-gray-200 rounded-md w-16"></div>
-                <div className="h-8 bg-gray-200 rounded-xl w-24"></div>
+                <div className="h-6 bg-zinc-200 dark:bg-zinc-800 rounded-md w-16"></div>
+                <div className="h-8 bg-zinc-200 dark:bg-zinc-800 rounded-md w-24"></div>
               </div>
             </div>
           </div>
@@ -92,10 +92,10 @@ export default function InternshipList({
   // Beautiful Empty State
   if (internships.length === 0) {
     return (
-      <div className="flex flex-col items-center justify-center bg-white border border-gray-100 rounded-2xl p-8 md:p-12 text-center shadow-xs w-full max-w-xl mx-auto my-6 animate-fade-in">
-        <div className="w-20 h-20 bg-sky-50 rounded-full flex items-center justify-center text-sky-500 mb-6 shadow-inner">
+      <div className="flex flex-col items-center justify-center bg-card border border-border rounded-lg p-8 md:p-12 text-center shadow-xs w-full max-w-xl mx-auto my-6 animate-fade-in">
+        <div className="w-16 h-16 bg-zinc-100 dark:bg-zinc-900 rounded-full flex items-center justify-center text-zinc-500 dark:text-zinc-400 mb-6 shadow-inner">
           <svg
-            className="w-10 h-10 stroke-current"
+            className="w-8 h-8 stroke-current"
             fill="none"
             strokeWidth="2"
             viewBox="0 0 24 24"
@@ -113,16 +113,16 @@ export default function InternshipList({
             />
           </svg>
         </div>
-        <h3 className="font-bold text-gray-800 text-lg md:text-xl mb-2">
+        <h3 className="font-semibold text-foreground tracking-tight text-base md:text-lg mb-2">
           No Internships Found
         </h3>
-        <p className="text-sm text-gray-500 max-w-sm mb-6 leading-relaxed">
+        <p className="text-sm text-zinc-500 dark:text-zinc-400 max-w-sm mb-6 leading-relaxed">
           We couldn't find any internships matching your current search term or filter selection. Try loosening your criteria!
         </p>
         <button
           onClick={handleResetFilters}
           type="button"
-          className="bg-sky-500 hover:bg-sky-600 text-white font-semibold text-sm px-6 py-2.5 rounded-xl transition-all shadow-xs hover:shadow-md hover:scale-[1.02] active:scale-[0.98]"
+          className="bg-zinc-900 dark:bg-zinc-50 hover:bg-zinc-900/90 dark:hover:bg-zinc-50/90 text-zinc-50 dark:text-zinc-900 font-semibold text-sm px-6 py-2.5 rounded-md transition-all shadow-xs"
         >
           Reset All Filters
         </button>
@@ -133,13 +133,13 @@ export default function InternshipList({
   return (
     <div className="flex flex-col gap-5 w-full">
       {/* Header Info Panel (Filter count, item count, and Sort select) */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-white p-4 border border-gray-50 shadow-xs rounded-2xl">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-card text-card-foreground p-4 border border-border shadow-xs rounded-lg">
         <div className="flex items-center gap-2.5">
-          <span className="text-gray-800 font-bold text-sm md:text-base">
+          <span className="text-foreground font-semibold text-sm">
             {internships.length} internship{internships.length > 1 ? "s" : ""} found
           </span>
           {activeFiltersCount > 0 && (
-            <span className="bg-sky-50 text-sky-600 font-semibold text-xs px-2 py-0.5 rounded-md border border-sky-100 flex items-center gap-1 shadow-2xs">
+            <span className="bg-linear-to-bl from-sky-500 to-sky-100 dark:bg-zinc-900 text-zinc-800 dark:text-zinc-300 font-semibold text-xs px-2 py-0.5 rounded-md border border-border flex items-center gap-1 shadow-2xs">
               {activeFiltersCount} active
             </span>
           )}
@@ -150,10 +150,10 @@ export default function InternshipList({
           <button
             onClick={onOpenMobileFilters}
             type="button"
-            className="md:hidden flex items-center gap-1.5 px-3 py-1.5 border border-gray-200 rounded-xl text-xs font-semibold text-gray-700 bg-gray-50 hover:bg-gray-100 transition-colors focus:outline-none"
+            className="md:hidden flex items-center gap-1.5 px-3 py-1.5 border border-border rounded-md text-xs font-medium text-foreground bg-transparent hover:bg-zinc-100 dark:hover:bg-zinc-900 transition-colors focus:outline-none shadow-2xs"
           >
             <svg
-              className="w-4 h-4 text-gray-500"
+              className="w-4 h-4 text-zinc-500"
               fill="none"
               stroke="currentColor"
               strokeWidth="2"
@@ -168,7 +168,7 @@ export default function InternshipList({
             </svg>
             Filters
             {activeFiltersCount > 0 && (
-              <span className="bg-sky-500 text-white rounded-full w-4 h-4 flex items-center justify-center text-[10px] font-bold">
+              <span className="bg-zinc-900 dark:bg-zinc-50 text-zinc-50 dark:text-zinc-900 rounded-full w-4 h-4 flex items-center justify-center text-[10px] font-bold">
                 {activeFiltersCount}
               </span>
             )}
@@ -176,14 +176,14 @@ export default function InternshipList({
 
           {/* Sort Selection */}
           <div className="flex items-center gap-2">
-            <label htmlFor="sortBy" className="text-xs font-semibold text-gray-400 uppercase tracking-wider hidden xs:block">
+            <label htmlFor="sortBy" className="text-xs font-semibold text-zinc-400 dark:text-zinc-500 uppercase tracking-wider hidden xs:block">
               Sort by
             </label>
             <select
               id="sortBy"
               value={filters.sortBy}
               onChange={handleSortChange}
-              className="text-xs md:text-sm font-semibold text-gray-700 bg-white border border-gray-200 rounded-xl px-3 py-1.5 focus:outline-none focus:ring-2 focus:ring-sky-100 focus:border-sky-500 hover:border-gray-300 transition-all cursor-pointer"
+              className="text-xs md:text-sm font-semibold text-foreground bg-card border border-input rounded-md px-3 py-1.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-ring hover:border-zinc-300 dark:hover:border-zinc-700 transition-all cursor-pointer shadow-2xs"
             >
               <option value="newest">Newest First</option>
               <option value="highest_stipend">Highest Stipend</option>

@@ -28,13 +28,13 @@ export default function SearchBar({ value, onChange }: SearchBarProps) {
         value={value}
         onChange={(e) => onChange(e.target.value)}
         placeholder="Search by profile, company, or location..."
-        className="w-full pl-11 pr-10 py-3 border border-gray-200 rounded-xl bg-white text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-sky-100 focus:border-sky-500 hover:border-gray-300 shadow-sm transition-all duration-200 text-sm md:text-base font-normal"
+        className="w-full pl-11 pr-10 py-3 border border-input rounded-md bg-card text-foreground placeholder-zinc-400 dark:placeholder-zinc-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 hover:border-zinc-300 dark:hover:border-zinc-700 shadow-xs transition-all duration-200 text-sm md:text-base font-normal"
       />
       {value && (
         <button
           type="button"
           onClick={() => onChange("")}
-          className="absolute inset-y-0 right-0 pr-4 flex items-center text-gray-400 hover:text-gray-600 transition-colors focus:outline-none"
+          className="absolute inset-y-0 right-0 pr-4 flex items-center text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 transition-colors focus:outline-none"
         >
           <svg
             className="h-5 w-5 stroke-current"

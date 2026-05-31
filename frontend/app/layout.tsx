@@ -16,6 +16,9 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "internshala",
+  icons:{
+    icon:"/favicon.png",
+  },
   description: "search page of intersnahala",
 };
 

@@ -89,7 +89,7 @@ export const DataProvider = ({
   const [filters, setFilters] = useState<Filters>(initialFilters);
 
 
-  const api_url = process.env.NEXT_PUBLIC_API_URL;
+  const api_url = process.env.NEXT_PUBLIC_API_URL || "https://internshala.com/hiring/search";
   
   useEffect(() => {
     const fetchData = async () => {
